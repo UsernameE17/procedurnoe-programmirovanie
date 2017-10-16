@@ -1,0 +1,85 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void converter (double value , char measuring system )
+{
+    switch (measuring system)
+    {
+        case 'K':
+        case 'k':
+            if (znach < 0)
+            {
+                printf("Incorrect input format.");
+                break;
+            }
+            else 
+            {
+                double c =  value - 273.15;
+                double f = ( valueh / 5 * 9) - 459.67;
+                printf ("%.2f K: \n",  value);
+                printf ("%.2f C: \n",  c);
+                printf ("%.2f F: \n", f);
+            break;
+            }
+            
+            case 'C':
+        case 'c':
+            if ( value < -273.15)
+            {
+                printf(Incorrect input format.");
+                break;
+            }
+            else
+            {
+                double k =  value + 273.15;
+                double f = ( value * 9 / 5) + 32;
+                printf ("%.2f C:\n",  value);
+                printf ("%.2f K:\n",  k);
+                printf ("%.2f F:\n", f);
+                break;
+            } 
+
+        case 'F':
+        case 'f':
+            if (znach < -459.67) {
+                printf("Incorrect input format.");
+                break;
+            }
+            else
+            {
+                double c = ( value - 32) * 5 / 9;
+                double k = ( value + 459.67) * 5 / 9;
+                printf ("%.2f F: \n",  value);
+                printf ("%.2f C: \n",  c);
+                printf ("%.2f K: \n", k);
+                break;
+            }
+
+        default:
+
+                printf("Error");
+
+            break;
+    }
+
+}
+
+   int main(int argc, char *argv[])
+    {
+	if (argc == 2)
+    {  
+		double  value = atof(argv[1]);
+		converter ( value,'C');
+    printf("\n");
+    converter ( value,'F');
+    printf("\n");
+    converter ( value,'K');
+    
+	  }
+    else if(argc == 3) 
+    {
+    	double converter = atof(argv[1]);
+    	converter( value,*argv[2]);
+    }
+    return 0;
+}
